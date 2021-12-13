@@ -1,0 +1,25 @@
+schema-version: 1.0
+
+description: |
+  Le paquet Zlib contient des routines de compression et décompression utilisées par quelques programmes.
+
+  Bibliothèques installées: libz.so
+
+  libz: Contient des fonctions de compression et décompression utilisées par quelques programmes
+
+
+
+builder:
+  origin: ./zlib-builder
+  var:
+    version: "{% version %}"
+
+
+var:
+  version: 1.2.11
+
+
+provision:
+  - copy:
+      builder: zlib
+      todir: /usr

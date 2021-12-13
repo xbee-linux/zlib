@@ -1,0 +1,29 @@
+schema-version: 1.0
+
+type: builder
+
+
+const:
+  srcDir: /usr/src
+  exportDir: /opt/zlib
+
+
+var:
+  version: 1.2.11
+
+provision:
+  - url:
+      from: https://zlib.net/zlib-{% version %}.tar.gz
+      todir: "{% srcDir %}"
+
+build:
+  - shell:
+      cmds:
+        - ./configure --prefix={% exportDir %}
+        - make
+        - make check
+        - make install
+        - rm -fv {% exportDir %}/lib/libz.a
+      directory: "{% srcDir %}/zlib-{% version %}"
+  - export: "{% exportDir %}"
+
