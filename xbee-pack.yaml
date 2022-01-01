@@ -9,11 +9,7 @@ description: |
 
 
 
-builder:
-  origin: ./zlib-builder
-  var:
-    version: "{% version %}"
-
+builder: ./zlib-builder
 
 var:
   version: 1.2.11
@@ -22,4 +18,4 @@ var:
 provision:
   - copy:
       builder: zlib
-      todir: /usr
+      todir: /

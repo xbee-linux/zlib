@@ -7,10 +7,6 @@ const:
   srcDir: /usr/src
   exportDir: /opt/zlib
 
-
-var:
-  version: 1.2.11
-
 provision:
   - url:
       from: https://zlib.net/zlib-{% version %}.tar.gz
@@ -19,11 +15,11 @@ provision:
 build:
   - shell:
       cmds:
-        - ./configure --prefix={% exportDir %}
+        - ./configure --prefix=/usr
         - make
-        - make check
-        - make install
-        - rm -fv {% exportDir %}/lib/libz.a
+#        - make check
+        - make install DESTDIR={% exportDir %}
+        - rm -fv {% exportDir %}/usr/lib/libz.a
       directory: "{% srcDir %}/zlib-{% version %}"
   - export: "{% exportDir %}"
 
