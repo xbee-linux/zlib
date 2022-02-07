@@ -11,7 +11,7 @@ description: |
 
 builder: ./zlib-builder
 
-var:
+in:
   version: 1.2.11
 
 
