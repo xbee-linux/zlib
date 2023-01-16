@@ -10,7 +10,7 @@ description: |
   libz: Contient des fonctions de compression et décompression utilisées par quelques programmes
 
 in:
-  version: 1.2.11
+  version: 1.2.13
 
 provision:
   - url:
