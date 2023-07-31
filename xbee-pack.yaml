@@ -15,7 +15,7 @@ var:
 provision:
   - url:
       from: https://zlib.net/zlib-{{ .version }}.tar.gz
-      todir: "{{ .xbeeSrc }}"
+      todir: "{{ .xbee.src }}"
 
 build:
   - shell:
@@ -23,8 +23,8 @@ build:
         - ./configure --prefix=/usr
         - make
 #        - make check
-        - make install DESTDIR={{ .xbeeOut }}
-        - rm -fv {{ .xbeeOut }}/usr/lib/libz.a
-      directory: "{{ .xbeeSrc }}/zlib-{{ .version }}"
+        - make install DESTDIR={{ .xbee.out }}
+        - rm -fv {{ .xbee.out }}/usr/lib/libz.a
+      directory: "{{ .xbee.src }}/zlib-{{ .version }}"
 
 
