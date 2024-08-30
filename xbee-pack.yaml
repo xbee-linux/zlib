@@ -10,7 +10,8 @@ description: |
   libz: Contient des fonctions de compression et décompression utilisées par quelques programmes
 
 var:
-  version: 1.2.13
+  xbee:
+    version: 1.2.13
 
 provision:
   - url: https://zlib.net/fossils/zlib-{{ .version }}.tar.gz
