@@ -14,7 +14,7 @@ var:
     version: 1.2.13
 
 provision:
-  - url: https://zlib.net/fossils/zlib-{{ .version }}.tar.gz
+  - url: https://zlib.net/fossils/zlib-{{ .xbee.version }}.tar.gz
 
 build:
   - shell:
@@ -24,6 +24,6 @@ build:
 #        - make check
         - make install DESTDIR={{ .xbee.out }}
         - rm -fv {{ .xbee.out }}/usr/lib/libz.a
-      directory: "{{ .xbee.src }}/zlib-{{ .version }}"
+      directory: "{{ .xbee.src }}/zlib-{{ .xbee.version }}"
 
 
