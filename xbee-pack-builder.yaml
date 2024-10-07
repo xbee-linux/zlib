@@ -1,7 +1,5 @@
 schema-version: 1.0
 
-type: builder
-
 description: |
   Le paquet Zlib contient des routines de compression et décompression utilisées par quelques programmes.
 
