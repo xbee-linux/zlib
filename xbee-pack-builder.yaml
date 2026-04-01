@@ -16,7 +16,7 @@ provision:
 
 build:
   - shell:
-      cmds:
+      cmd:
         - ./configure --prefix=/usr
         - make
 #        - make check
